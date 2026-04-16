@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RA Padel Court — Strategic Brief | Estetio</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink: #141412;
+  --paper: #F7F4EE;
+  --warm: #EDEAE2;
+  --muted: #8C8880;
+  --faint: #D4D0C8;
+  --accent: #D4541A;
+  --accent-dim: rgba(212,84,26,0.1);
+  --green: #2D5016;
+  --green-dim: rgba(45,80,22,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Sora', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── UTILITIES ── */
+.serif { font-family: 'Instrument Serif', serif; }
+.label {
+  font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+  font-weight: 600; color: var(--accent);
+}
+.divider { width: 100%; height: 1px; background: var(--faint); }
+em { font-style: italic; }
+
+/* ── LAYOUT ── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+.hero {
+  padding: 100px 0 80px;
+  border-bottom: 1px solid var(--faint);
+}
+.hero-label {
+  font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+  font-weight: 600; color: var(--accent); margin-bottom: 32px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-label::after {
+  content: ''; flex: 1; max-width: 48px; height: 1px; background: var(--accent);
+}
+.hero-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(52px, 8vw, 96px);
+  line-height: 0.95; font-weight: 400;
+  margin-bottom: 32px; letter-spacing: -1px;
+}
+.hero-title em { font-style: italic; color: var(--accent); }
+.hero-sub {
+  font-size: 15px; color: var(--muted); max-width: 520px;
+  line-height: 1.75; margin-bottom: 56px;
+}
+.hero-meta {
+  display: flex; gap: 0; flex-wrap: wrap;
+  border-top: 1px solid var(--faint); padding-top: 32px;
+}
+.meta-item {
+  padding-right: 40px; margin-right: 40px;
+  border-right: 1px solid var(--faint);
+}
+.meta-item:last-child { border-right: none; margin-right: 0; }
+.meta-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.meta-val { font-size: 14px; font-weight: 500; color: var(--ink); }
+
+/* ══════════════════════════════════
+   SECTION WRAPPER
+══════════════════════════════════ */
+.section { padding: 80px 0; border-bottom: 1px solid var(--faint); }
+.section:last-child { border-bottom: none; }
+
+.section-header { margin-bottom: 48px; }
+.section-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 13px; font-style: italic; color: var(--faint);
+  margin-bottom: 8px; display: block;
+}
+.section-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400; line-height: 1.15;
+}
+.section-title em { color: var(--accent); font-style: italic; }
+.section-body {
+  font-size: 14px; color: var(--muted); line-height: 1.8;
+  max-width: 640px; margin-top: 20px;
+}
+
+/* ══════════════════════════════════
+   LATAR BELAKANG — STAT GRID
+══════════════════════════════════ */
+.stat-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--faint);
+  border: 1px solid var(--faint); margin-bottom: 32px;
+}
+.stat-box {
+  background: var(--paper); padding: 36px 32px;
+}
+.stat-box.dark { background: var(--ink); }
+.stat-n {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(40px, 5vw, 60px); line-height: 1;
+  color: var(--ink); margin-bottom: 10px;
+}
+.stat-box.dark .stat-n { color: var(--accent); }
+.stat-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.stat-box.dark .stat-desc { color: rgba(247,244,238,0.45); }
+
+.warning-box {
+  background: var(--accent-dim);
+  border-left: 3px solid var(--accent);
+  padding: 20px 24px; margin-top: 32px;
+  font-size: 13px; color: var(--ink); line-height: 1.7;
+}
+.warning-box strong { font-weight: 600; }
+
+/* ══════════════════════════════════
+   KOMPETITOR TABLE
+══════════════════════════════════ */
+.comp-table {
+  width: 100%; border-collapse: collapse; margin-top: 8px;
+}
+.comp-table th {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  font-weight: 600; color: var(--muted);
+  padding: 0 0 14px; text-align: left;
+  border-bottom: 1px solid var(--faint);
+}
+.comp-table td {
+  padding: 18px 0; font-size: 13px;
+  border-bottom: 1px solid var(--warm);
+  vertical-align: top;
+}
+.comp-table td:first-child { font-weight: 500; width: 22%; padding-right: 16px; }
+.comp-table td:not(:first-child) { color: var(--muted); padding-right: 16px; }
+.comp-table tr.ra td { color: var(--ink); }
+.comp-table tr.ra td:first-child { color: var(--accent); }
+
+.badge {
+  display: inline-block; padding: 2px 9px; border-radius: 2px;
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;
+}
+.badge-gap { background: var(--accent-dim); color: var(--accent); }
+.badge-partial { background: var(--warm); color: var(--muted); }
+.badge-opp { background: var(--green-dim); color: var(--green); }
+
+.insight-box {
+  margin-top: 32px; background: var(--warm);
+  padding: 24px 28px; font-size: 13px;
+  color: var(--ink); line-height: 1.75;
+}
+.insight-box strong { font-weight: 600; }
+
+/* ══════════════════════════════════
+   STRATEGI INTI
+══════════════════════════════════ */
+.strategy-statement {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.35; color: var(--ink);
+  border-left: 3px solid var(--accent);
+  padding-left: 28px; margin-bottom: 40px;
+}
+.strategy-statement em { color: var(--accent); }
+
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; background: var(--faint);
+  margin-bottom: 32px;
+}
+.compare-col {
+  background: var(--paper); padding: 32px 28px;
+}
+.compare-col.right { background: var(--ink); }
+.compare-col-label {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; color: var(--muted); margin-bottom: 20px;
+}
+.compare-col.right .compare-col-label { color: rgba(247,244,238,0.35); }
+.compare-items { display: flex; flex-direction: column; gap: 12px; }
+.compare-item {
+  font-size: 13px; color: var(--muted); line-height: 1.5;
+  padding-left: 16px; position: relative;
+}
+.compare-item::before { content: '×'; position: absolute; left: 0; color: var(--faint); font-size: 12px; }
+.compare-col.right .compare-item { color: rgba(247,244,238,0.6); }
+.compare-col.right .compare-item::before { content: '→'; color: var(--accent); }
+
+/* ══════════════════════════════════
+   CX ARSITEKTUR
+══════════════════════════════════ */
+.cx-layers { display: flex; flex-direction: column; gap: 2px; }
+.cx-layer {
+  display: grid; grid-template-columns: 200px 1fr;
+  background: var(--warm);
+}
+.cx-layer-left {
+  padding: 32px 28px; border-right: 1px solid var(--faint);
+  display: flex; flex-direction: column; justify-content: flex-start; gap: 8px;
+}
+.cx-layer-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 36px; color: var(--faint); line-height: 1; font-style: italic;
+}
+.cx-layer-phase {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; color: var(--accent);
+}
+.cx-layer-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px; color: var(--ink); line-height: 1.2; margin-top: 4px;
+}
+.cx-layer-right { padding: 32px 36px; }
+.cx-layer-insight {
+  font-size: 13px; color: var(--ink); line-height: 1.65;
+  margin-bottom: 16px; font-weight: 400;
+}
+.cx-layer-points { display: flex; flex-direction: column; gap: 8px; }
+.cx-point {
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+  padding-left: 16px; position: relative;
+}
+.cx-point::before { content: '—'; position: absolute; left: 0; color: var(--faint); }
+
+/* ══════════════════════════════════
+   INISIATIF
+══════════════════════════════════ */
+.initiatives { display: flex; flex-direction: column; gap: 2px; }
+.init-item {
+  display: grid; grid-template-columns: 48px 1fr;
+  background: var(--warm); gap: 0;
+}
+.init-num-col {
+  background: var(--ink); display: flex;
+  align-items: flex-start; justify-content: center;
+  padding-top: 32px;
+}
+.init-num-col span {
+  font-family: 'Instrument Serif', serif;
+  font-size: 13px; font-style: italic; color: rgba(247,244,238,0.2);
+  writing-mode: vertical-rl; letter-spacing: 2px;
+}
+.init-body { padding: 32px 36px; }
+.init-tag {
+  display: inline-block; padding: 3px 10px; border-radius: 2px;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 14px;
+}
+.tag-cx { background: rgba(45,80,22,0.08); color: var(--green); }
+.tag-biz { background: var(--accent-dim); color: var(--accent); }
+.tag-data { background: rgba(30,60,120,0.08); color: #1E3C78; }
+.tag-community { background: rgba(120,60,20,0.08); color: #783C14; }
+
+.init-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px; color: var(--ink); line-height: 1.2; margin-bottom: 12px;
+}
+.init-desc {
+  font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 16px;
+}
+.init-impact {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  color: var(--accent); padding-top: 14px;
+  border-top: 1px solid var(--faint);
+}
+
+/* ══════════════════════════════════
+   ACTION PLAN
+══════════════════════════════════ */
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.t-row {
+  display: grid; grid-template-columns: 140px 1fr;
+  border-bottom: 1px solid var(--faint);
+}
+.t-row:first-child { border-top: 1px solid var(--faint); }
+.t-row.highlight { background: var(--ink); }
+.t-left {
+  padding: 28px 24px 28px 0;
+  border-right: 1px solid var(--faint);
+  display: flex; flex-direction: column; gap: 4px;
+}
+.t-row.highlight .t-left { border-right-color: rgba(247,244,238,0.08); }
+.t-week {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; color: var(--muted);
+}
+.t-row.highlight .t-week { color: rgba(212,84,26,0.6); }
+.t-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 17px; color: var(--ink); line-height: 1.2;
+}
+.t-row.highlight .t-name { color: var(--accent); }
+.t-right { padding: 28px 0 28px 32px; }
+.t-tasks { display: flex; flex-direction: column; gap: 10px; }
+.t-task {
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+  padding-left: 16px; position: relative;
+}
+.t-task::before { content: '→'; position: absolute; left: 0; color: var(--faint); font-size: 11px; }
+.t-row.highlight .t-task { color: rgba(247,244,238,0.45); }
+.t-row.highlight .t-task::before { color: rgba(212,84,26,0.3); }
+
+/* ══════════════════════════════════
+   KPI
+══════════════════════════════════ */
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--faint);
+}
+.kpi-box {
+  background: var(--paper); padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.kpi-metric { font-size: 11px; color: var(--muted); letter-spacing: 0.5px; }
+.kpi-val {
+  font-family: 'Instrument Serif', serif;
+  font-size: 32px; color: var(--ink); line-height: 1;
+}
+.kpi-why { font-size: 11px; color: var(--muted); line-height: 1.5; padding-top: 8px; border-top: 1px solid var(--faint); }
+
+/* ══════════════════════════════════
+   SCOPE
+══════════════════════════════════ */
+.scope-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--faint); margin-bottom: 28px;
+}
+.scope-col {
+  background: var(--paper); padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.scope-ws {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; color: var(--muted);
+}
+.scope-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 19px; color: var(--ink); line-height: 1.2;
+}
+.scope-items { display: flex; flex-direction: column; gap: 8px; }
+.scope-item {
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+  padding-left: 16px; position: relative;
+}
+.scope-item::before { content: '—'; position: absolute; left: 0; color: var(--faint); }
+
+.mandate-box {
+  background: var(--ink); padding: 28px 32px;
+  font-size: 13px; color: rgba(247,244,238,0.55);
+  line-height: 1.75;
+}
+.mandate-box strong { color: rgba(212,84,26,0.8); font-weight: 500; }
+
+/* ══════════════════════════════════
+   CLOSING
+══════════════════════════════════ */
+.closing { padding: 100px 0; }
+.closing-h {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1; letter-spacing: -1px;
+  margin-bottom: 28px;
+}
+.closing-h em { font-style: italic; color: var(--accent); }
+.closing-sub {
+  font-size: 14px; color: var(--muted); max-width: 520px;
+  line-height: 1.75; margin-bottom: 56px;
+}
+.closing-footer {
+  display: flex; gap: 48px; flex-wrap: wrap;
+  padding-top: 32px; border-top: 1px solid var(--faint);
+  align-items: center;
+}
+.closing-meta { display: flex; flex-direction: column; gap: 4px; }
+.cl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.cv { font-size: 14px; font-weight: 500; }
+.estetio-mark {
+  margin-left: auto;
+  font-family: 'Instrument Serif', serif;
+  font-size: 13px; font-style: italic; color: var(--faint);
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════
+   NAV DOTS (FIXED)
+══════════════════════════════════ */
+.side-nav {
+  position: fixed; right: 28px; top: 50%;
+  transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 8px;
+  z-index: 100;
+}
+.side-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--faint); cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.side-dot.active { background: var(--accent); transform: scale(1.4); }
+.side-dot:hover { background: var(--muted); }
+
+/* ══════════════════════════════════
+   DETAIL BUTTON
+══════════════════════════════════ */
+.detail-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 20px; padding: 10px 18px;
+  border: 1px solid var(--faint); border-radius: 2px;
+  background: none; cursor: pointer;
+  font-family: 'Sora', sans-serif; font-size: 11px;
+  font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); transition: all 0.2s;
+}
+.detail-btn:hover {
+  border-color: var(--accent); color: var(--accent);
+  background: var(--accent-dim);
+}
+.detail-btn svg { width: 12px; height: 12px; transition: transform 0.2s; }
+.detail-btn:hover svg { transform: translateX(2px); }
+
+/* ══════════════════════════════════
+   MODAL OVERLAY
+══════════════════════════════════ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(20,20,18,0.7);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 24px;
+}
+.modal-overlay.open {
+  opacity: 1; pointer-events: all;
+}
+.modal {
+  background: var(--paper); width: 100%; max-width: 680px;
+  max-height: 85vh; overflow-y: auto;
+  transform: translateY(16px);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+
+.modal-header {
+  padding: 36px 40px 24px;
+  border-bottom: 1px solid var(--faint);
+  position: sticky; top: 0; background: var(--paper); z-index: 1;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+}
+.modal-tag {
+  display: inline-block; padding: 3px 10px; border-radius: 2px;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 12px;
+}
+.modal-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 26px; font-weight: 400; line-height: 1.2;
+  color: var(--ink);
+}
+.modal-close {
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-size: 20px; line-height: 1;
+  padding: 4px; flex-shrink: 0; margin-top: 32px;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: var(--ink); }
+
+.modal-body { padding: 32px 40px 40px; }
+.modal-body h4 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 16px; font-weight: 400; color: var(--ink);
+  margin: 28px 0 10px;
+}
+.modal-body h4:first-child { margin-top: 0; }
+.modal-body p {
+  font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 12px;
+}
+.modal-body strong { color: var(--ink); font-weight: 500; }
+.modal-body em { font-style: italic; color: var(--accent); }
+.modal-steps { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+.modal-step {
+  display: grid; grid-template-columns: 32px 1fr;
+  gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid var(--warm);
+}
+.modal-step:last-child { border-bottom: none; }
+.step-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px; font-style: italic; color: var(--faint); line-height: 1.2;
+}
+.step-content { display: flex; flex-direction: column; gap: 4px; }
+.step-title { font-size: 13px; font-weight: 500; color: var(--ink); }
+.step-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.modal-callout {
+  background: var(--accent-dim); border-left: 3px solid var(--accent);
+  padding: 16px 20px; margin: 20px 0;
+  font-size: 12px; color: var(--ink); line-height: 1.7;
+}
+.modal-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+.modal-table th {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  font-weight: 600; color: var(--muted);
+  padding: 0 12px 10px 0; text-align: left;
+  border-bottom: 1px solid var(--faint);
+}
+.modal-table td {
+  font-size: 12px; color: var(--muted); padding: 12px 12px 12px 0;
+  border-bottom: 1px solid var(--warm); vertical-align: top; line-height: 1.5;
+}
+.modal-table td:first-child { font-weight: 500; color: var(--ink); width: 35%; }
+.modal-impact {
+  background: var(--green-dim); border-left: 3px solid var(--green);
+  padding: 14px 18px; margin-top: 24px;
+  font-size: 12px; color: var(--green); line-height: 1.6; font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .container { padding: 0 20px; }
+  .stat-row { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .scope-grid { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .cx-layer { grid-template-columns: 1fr; }
+  .t-row { grid-template-columns: 1fr; }
+  .side-nav { display: none; }
+  .hero-meta { flex-direction: column; gap: 16px; }
+  .meta-item { border-right: none; border-bottom: 1px solid var(--faint); padding-bottom: 16px; margin-right: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDE NAV -->
+<nav class="side-nav" id="sideNav">
+  <div class="side-dot active" data-target="hero" title="Cover"></div>
+  <div class="side-dot" data-target="latar" title="Latar Belakang"></div>
+  <div class="side-dot" data-target="kompetitor" title="Kompetitor"></div>
+  <div class="side-dot" data-target="strategi" title="Strategi"></div>
+  <div class="side-dot" data-target="cx" title="CX Arsitektur"></div>
+  <div class="side-dot" data-target="inisiatif" title="Inisiatif"></div>
+  <div class="side-dot" data-target="action" title="Action Plan"></div>
+  <div class="side-dot" data-target="kpi" title="KPI"></div>
+  <div class="side-dot" data-target="scope" title="Scope Estetio"></div>
+</nav>
+
+<div class="container">
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="hero-label">Strategic Brief — CX & Operational Excellence</div>
+    <h1 class="hero-title">RA Padel<br><em>Court</em></h1>
+    <p class="hero-sub">
+      Dokumen ini berisi latar belakang strategi, pendekatan CX dan operasional, serta action plan konkrit untuk RA Padel Court — dari sebelum hari pertama beroperasi sampai 30 hari ke depan.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-label">Klien</div>
+        <div class="meta-val">RA Padel Court, Cibubur</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Disusun oleh</div>
+        <div class="meta-val">Estetio Growth</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Fokus</div>
+        <div class="meta-val">CX · Operasional · Retensi</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tahun</div>
+        <div class="meta-val">2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LATAR BELAKANG ══ -->
+  <section class="section" id="latar">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <div class="label" style="margin-bottom:16px">Latar Belakang</div>
+      <h2 class="section-title">Pasarnya nyata.<br><em>Kompetisinya akan datang.</em></h2>
+      <p class="section-body">
+        Indonesia bukan lagi pasar padel yang sedang tumbuh — Indonesia sudah menjadi pasar terbesar dan tercepat tumbuh di Asia Tenggara. Yang berubah sekarang adalah intensitas kompetisinya.
+      </p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box dark">
+        <div class="stat-n">295%</div>
+        <div class="stat-desc">Pertumbuhan jumlah klub padel di Indonesia sepanjang 2025. Dari hampir nol menjadi salah satu olahraga paling cepat tumbuh di Asia Tenggara — dalam 4 tahun.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n" style="color:var(--accent)">1.580+</div>
+        <div class="stat-desc">Lapangan baru dibangun di Indonesia sepanjang 2025 saja — rata-rata 3,8 lapangan baru setiap hari. Kompetisi tumbuh cepat.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n" style="color:var(--ink)">76%</div>
+        <div class="stat-desc">Tingkat pemakaian lapangan padel di Jakarta pada 2025. Permintaan saat ini masih melampaui ketersediaan lapangan — tapi ini tidak akan berlangsung selamanya.</div>
+      </div>
+    </div>
+
+    <div class="stat-row" style="margin-top:2px">
+      <div class="stat-box">
+        <div class="stat-n" style="color:var(--ink)">92%</div>
+        <div class="stat-desc">Tingkat pemain yang balik lagi setelah sesi pertama — secara global. Padel adalah olahraga yang paling mudah bikin orang ketagihan: sekali main, hampir semua orang mau lagi.</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-n" style="color:var(--accent)">42%</div>
+        <div class="stat-desc">Booking di Jakarta didominasi komunitas, bukan individu. Artinya: yang perlu dimenangkan bukan semua pemain — tapi host dan koordinator komunitasnya.</div>
+      </div>
+      <div class="stat-box dark">
+        <div class="stat-n">20rb+</div>
+        <div class="stat-desc">Pemain aktif di Indonesia per 2025, dengan 439 pemain profesional terdaftar. PBPI resmi bergabung dengan FIP — fondasi ekosistem sudah terbentuk.</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong>Risiko yang perlu dipahami:</strong> Swedia pernah ada di posisi yang sama — pertumbuhan lapangan 1.000% dalam 2 tahun, lalu jatuh. Lebih dari 100 bisnis lapangan padel bangkrut karena pertumbuhan terlalu cepat tanpa loyalitas yang kuat. Indonesia bergerak di laju yang mirip. <strong>Yang bertahan adalah yang membangun kesetiaan pelanggan lebih dulu, sebelum pasar terlalu penuh.</strong>
+      <br><br>
+      Indonesia saat ini masih punya 1 lapangan untuk setiap 2,1 juta orang — masih jauh dari titik jenuh. Tapi kondisi ini tidak akan bertahan selamanya. RA masuk di waktu yang tepat.
+    </div>
+  </section>
+
+  <!-- ══ KOMPETITOR ══ -->
+  <section class="section" id="kompetitor">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <div class="label" style="margin-bottom:16px">Peta Kompetitor</div>
+      <h2 class="section-title">Cibubur punya court.<br><em>Belum punya club.</em></h2>
+      <p class="section-body">
+        Empat venue sudah beroperasi di sekitar Cibubur. Polanya sama di semua empat: bersaing di fasilitas dan harga. Tidak ada satu pun yang membangun komunitas atau sistem menjaga pelanggan secara terencana.
+      </p>
+    </div>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Venue</th>
+          <th>Penawaran</th>
+          <th>Program Komunitas</th>
+          <th>Sistem Retensi</th>
+          <th>Gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mingle Padel</td>
+          <td>Court rental</td>
+          <td>Tidak ada</td>
+          <td>Tidak ada</td>
+          <td><span class="badge badge-gap">Tinggi</span></td>
+        </tr>
+        <tr>
+          <td>Klasse Padel Haus</td>
+          <td>Court + open session</td>
+          <td>Ad hoc</td>
+          <td>Tidak ada</td>
+          <td><span class="badge badge-gap">Tinggi</span></td>
+        </tr>
+        <tr>
+          <td>Jè Padel Club</td>
+          <td>2 court + sauna + F&B + pilates</td>
+          <td>Sebagian</td>
+          <td>Tidak terstruktur</td>
+          <td><span class="badge badge-partial">Parsial</span></td>
+        </tr>
+        <tr>
+          <td>Empire Padel</td>
+          <td>4 panoramic court</td>
+          <td>Tidak ada</td>
+          <td>Tidak ada</td>
+          <td><span class="badge badge-gap">Tinggi</span></td>
+        </tr>
+        <tr class="ra">
+          <td>RA Padel ✦</td>
+          <td>TBD — tergantung strategi</td>
+          <td>Dirancang dari awal</td>
+          <td>Dirancang dari awal</td>
+          <td><span class="badge badge-opp">Peluang</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="insight-box">
+      <strong>Kesimpulan:</strong> Ruang antara "sekadar sewa lapangan" dan "club yang punya komunitas nyata" masih kosong di Cibubur. Itulah posisi yang bisa RA ambil — bukan dengan membangun fasilitas lebih bagus, tapi dengan membangun pengalaman yang lebih dalam.
+    </div>
+  </section>
+
+  <!-- ══ STRATEGI INTI ══ -->
+  <section class="section" id="strategi">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <div class="label" style="margin-bottom:16px">Strategi Inti</div>
+      <h2 class="section-title">Satu pilihan yang<br><em>menentukan segalanya</em></h2>
+    </div>
+
+    <div class="strategy-statement">
+      RA bukan masuk ke bisnis sewa lapangan.<br>
+      RA masuk ke bisnis <em>membangun komunitas</em> —<br>
+      di mana padel adalah cara orang masuk, tapi komunitas yang membuat mereka tetap di sini.
+    </div>
+
+    <p class="section-body" style="max-width:100%;margin-bottom:32px">
+      Ini pilihan bisnis dengan konsekuensi langsung. Berikut perbedaannya secara konkrit:
+    </p>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-col-label">Jika RA = Sewa Lapangan</div>
+        <div class="compare-items">
+          <div class="compare-item">Bersaing di harga — selalu ada yang lebih murah</div>
+          <div class="compare-item">Pelanggan pergi ketika ada lapangan baru yang lebih dekat atau lebih murah</div>
+          <div class="compare-item">Pendapatan terbatas: jam × tarif</div>
+          <div class="compare-item">Tidak ada keunggulan jangka panjang — mudah ditiru</div>
+          <div class="compare-item">Hari kerja selalu sepi — tidak ada cara mengisinya</div>
+        </div>
+      </div>
+      <div class="compare-col right">
+        <div class="compare-col-label">Jika RA = Membangun Komunitas</div>
+        <div class="compare-items">
+          <div class="compare-item">Bersaing di rasa memiliki — komunitas tidak bisa ditiru</div>
+          <div class="compare-item">Pelanggan yang pindah harus meninggalkan teman mainnya juga</div>
+          <div class="compare-item">Pendapatan berlapis: lapangan + F&B + coaching + korporat + merchandise</div>
+          <div class="compare-item">Komunitas makin kuat seiring waktu — makin sulit dikalahkan kompetitor</div>
+          <div class="compare-item">Paket korporat mengisi hari kerja yang biasanya kosong</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <strong>Referensi global:</strong> Reserve Padel (NYC) dan Padel Haus (NYC, Atlanta) membuktikan bahwa ketika pendekatan hospitality diterapkan ke fasilitas olahraga, hasilnya berbeda secara fundamental. Club padel di Swedia dengan program komunitas yang terstruktur mencapai <strong>90%+ tingkat pelanggan yang bertahan per tahun</strong> — jauh di atas rata-rata industri. Ini bukan kebetulan. Ini hasil dari desain yang disengaja.
+    </div>
+  </section>
+
+  <!-- ══ CX ARSITEKTUR ══ -->
+  <section class="section" id="cx">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <div class="label" style="margin-bottom:16px">Arsitektur CX</div>
+      <h2 class="section-title">Tujuh titik interaksi.<br><em>Satu pengalaman yang utuh.</em></h2>
+      <p class="section-body">
+        Customer journey RA bukan sekadar diagram — ini adalah panduan operasional yang menjawab: apa yang harus terjadi di setiap titik, dan siapa yang bertanggung jawab memastikannya terjadi.
+      </p>
+    </div>
+
+    <div class="cx-layers">
+      <div class="cx-layer">
+        <div class="cx-layer-left">
+          <div class="cx-layer-num">01</div>
+          <div class="cx-layer-phase">Awareness</div>
+          <div class="cx-layer-title">Orang Pertama Kenal RA</div>
+        </div>
+        <div class="cx-layer-right">
+          <div class="cx-layer-insight">Kesan pertama terbentuk sebelum orang datang. Profil Courtside, Instagram, Google Maps — semua harus siap dan konsisten sebelum hari pertama buka.</div>
+          <div class="cx-layer-points">
+            <div class="cx-point">Profil Courtside lengkap: foto, jam operasional, harga, dan deskripsi yang mencerminkan positioning RA</div>
+            <div class="cx-point">Instagram RA aktif sebelum launching — bukan setelah</div>
+            <div class="cx-point">Google Maps terdaftar dengan informasi yang akurat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-layer">
+        <div class="cx-layer-left">
+          <div class="cx-layer-num">02</div>
+          <div class="cx-layer-phase">Booking</div>
+          <div class="cx-layer-title">Dari Niat ke Konfirmasi</div>
+        </div>
+        <div class="cx-layer-right">
+          <div class="cx-layer-insight">Setiap friction di tahap ini adalah risiko kehilangan pelanggan. Orang yang susah booking tidak jadi datang — dan tidak akan coba lagi.</div>
+          <div class="cx-layer-points">
+            <div class="cx-point">Semua booking lewat Courtside — tidak ada booking manual via WhatsApp</div>
+            <div class="cx-point">Konfirmasi otomatis dengan informasi lengkap: lokasi, parkir, dress code, apa yang perlu dibawa</div>
+            <div class="cx-point">Alur berbeda untuk pemain baru vs member lama vs tamu korporat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-layer">
+        <div class="cx-layer-left">
+          <div class="cx-layer-num">03</div>
+          <div class="cx-layer-phase">Arrival</div>
+          <div class="cx-layer-title">90 Detik Pertama</div>
+        </div>
+        <div class="cx-layer-right">
+          <div class="cx-layer-insight">Kesan pertama terbentuk dalam 90 detik kedatangan dan hampir tidak mungkin diubah setelahnya. Ini tahap yang paling sering diabaikan dan paling mahal kalau salah.</div>
+          <div class="cx-layer-points">
+            <div class="cx-point">Arrival protocol: siapa yang menyambut, apa yang dikatakan, bagaimana alur check-in</div>
+            <div class="cx-point">Signage yang jelas dari parkiran sampai court — orang tidak boleh bingung</div>
+            <div class="cx-point">Standar minimal kebersihan dan kerapian area publik sebelum jam operasional dimulai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-layer">
+        <div class="cx-layer-left">
+          <div class="cx-layer-num">04</div>
+          <div class="cx-layer-phase">During Play</div>
+          <div class="cx-layer-title">Di Court</div>
+        </div>
+        <div class="cx-layer-right">
+          <div class="cx-layer-insight">Staff bukan hanya standby — tapi juga tidak boleh mengganggu. Ada waktu yang tepat untuk mendekati tamu dan ada waktu yang harus dibiarkan.</div>
+          <div class="cx-layer-points">
+            <div class="cx-point">Standar kondisi lapangan: net, bola, pencahayaan — dicek sebelum setiap sesi dimulai</div>
+            <div class="cx-point">Prosedur penanganan masalah teknis di tempat tanpa menunggu laporan ke atasan</div>
+            <div class="cx-point">Ada spot foto yang bagus — orang yang posting ke Instagram sudah bantu promosi RA tanpa biaya</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-layer">
+        <div class="cx-layer-left">
+          <div class="cx-layer-num">05</div>
+          <div class="cx-layer-phase">Post-Match</div>
+          <div class="cx-layer-title">Dwell-Time = Revenue</div>
+        </div>
+        <div class="cx-layer-right">
+          <div class="cx-layer-insight">Orang yang berlama-lama setelah main menghasilkan 40–60% lebih banyak pendapatan tambahan. Desain ruang RA harus mendorong orang untuk tidak langsung pulang.</div>
+          <div class="cx-layer-points">
+            <div class="cx-point">Area santai setelah main: tempat duduk, F&B, suasana yang nyaman — target minimal 30 menit setelah sesi selesai</div>
+            <div class="cx-point">Staff menyapa tamu setelah main secara natural — bukan menawarkan sesuatu secara paksa</div>
+            <div class="cx-point">Rata-rata pengeluaran per kunjungan di Indonesia: Rp 400rb untuk olahraga + Rp 50rb untuk makan/minum</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-layer">
+        <div class="cx-layer-left">
+          <div class="cx-layer-num">06</div>
+          <div class="cx-layer-phase">Follow-Up</div>
+          <div class="cx-layer-title">Setelah Orang Pulang</div>
+        </div>
+        <div class="cx-layer-right">
+          <div class="cx-layer-insight">Interaksi dengan RA tidak berhenti di parkiran. Yang terjadi 2–4 jam setelah orang pulang menentukan apakah mereka akan kembali atau tidak.</div>
+          <div class="cx-layer-points">
+            <div class="cx-point">Kirim pesan personal setelah kunjungan — bukan promo massal, tapi pesan yang menyebut sesi mereka secara spesifik</div>
+            <div class="cx-point">Pemain baru yang terlihat menikmati sesi diundang ke Americano League berikutnya</div>
+            <div class="cx-point">Keluhan harus diselesaikan dalam 24 jam dan dikonfirmasi langsung ke tamu yang bersangkutan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cx-layer">
+        <div class="cx-layer-left">
+          <div class="cx-layer-num">07</div>
+          <div class="cx-layer-phase">Retention</div>
+          <div class="cx-layer-title">Dari Tamu ke Komunitas</div>
+        </div>
+        <div class="cx-layer-right">
+          <div class="cx-layer-insight">Member yang punya teman di sini lebih sulit pergi ke tempat lain. Tahap ini adalah tentang mengubah seseorang dari "tamu" menjadi "bagian dari RA."</div>
+          <div class="cx-layer-points">
+            <div class="cx-point">Ada tahapan yang jelas: dari pengunjung biasa → member tetap → founding member → penggerak komunitas</div>
+            <div class="cx-point">Member yang tidak booking selama 14 hari otomatis terflag — staff langsung hubungi secara personal</div>
+            <div class="cx-point">Americano League dan event komunitas sebagai cara terstruktur membangun rasa memiliki</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INISIATIF ══ -->
+  <section class="section" id="inisiatif">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <div class="label" style="margin-bottom:16px">Inisiatif Utama</div>
+      <h2 class="section-title">Empat gerakan yang<br><em>belum dilakukan siapapun di Cibubur.</em></h2>
+    </div>
+
+    <div class="initiatives">
+
+      <div class="init-item">
+        <div class="init-num-col"><span>01</span></div>
+        <div class="init-body">
+          <span class="init-tag tag-biz">Revenue Architecture</span>
+          <div class="init-title">Founding Member Program</div>
+          <div class="init-desc">
+            Batasi 75 slot founding member — bukan diskon, tapi eksklusivitas terstruktur. Setiap slot diposisikan sebagai <strong>pemain utama yang membawa grupnya</strong>, bukan individu semata. Karena realita booking di Jakarta: satu orang yang loyal ke RA akan membawa 3–5 orang ke setiap sesi.
+            <br><br>
+            Benefit yang relevan: priority booking 48 jam lebih awal, satu lapangan reserved per minggu untuk grupnya, kartu membership fisik bernomor (001–075), undangan ke event eksklusif yang tidak dijual ke publik, dan nama tercantum di Founding Wall RA. Outreach dilakukan secara personal ke jaringan terdekat owner — bukan broadcast. Target: 20 dari 30 kontak pertama masuk dalam 5 hari.
+          </div>
+          <div class="init-impact">↑ Pemasukan sebelum buka · ↑ Penyebaran dari mulut ke mulut · ↓ Biaya mendapatkan member baru</div>
+          <button class="detail-btn" onclick="openModal('founding')">
+            Lihat elaborasi detail
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-num-col"><span>02</span></div>
+        <div class="init-body">
+          <span class="init-tag tag-biz">B2B Revenue</span>
+          <div class="init-title">Corporate Padel sebagai Revenue Stream Weekday</div>
+          <div class="init-desc">
+            Di pasar yang lebih matang (UK, US), padel sudah menjadi pengganti golf untuk kegiatan kantor — lebih cepat, lebih inklusif, lebih murah. Cibubur berada dekat dengan kawasan bisnis yang cukup besar. RA bisa menjual tiga paket korporat yang jelas:
+            <br><br>
+            <strong>Paket A — Corporate Outing:</strong> 3 jam, 2–3 lapangan, format Americano, sudah termasuk pelatih + makan/minum + dokumentasi. Dijual per orang — lebih mudah masuk ke anggaran perusahaan.
+            <br><br>
+            <strong>Paket B — Corporate League:</strong> Satu slot lapangan per minggu selama 3 bulan, jersey tim, pencatatan skor, mini-trophy di akhir kuartal.
+            <br><br>
+            <strong>Paket C — Client Entertainment:</strong> Lapangan eksklusif 2–4 orang, minuman sambutan, handuk, makan ringan setelah main. Untuk eksekutif yang ajak klien.
+            <br><br>
+            Ini mengisi slot hari kerja yang biasanya kosong — tanpa bersaing dengan slot weekend yang sudah ramai.
+          </div>
+          <div class="init-impact">↑ Pemakaian lapangan di hari kerja · ↑ Sumber pendapatan baru · Menjangkau segmen yang sama sekali berbeda</div>
+          <button class="detail-btn" onclick="openModal('corporate')">
+            Lihat elaborasi detail
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-num-col"><span>03</span></div>
+        <div class="init-body">
+          <span class="init-tag tag-data">Data-Driven Ops</span>
+          <div class="init-title">Sistem Pencegahan Kehilangan Member Berbasis Data</div>
+          <div class="init-desc">
+            Biaya mendapatkan satu member baru rata-rata 5–7× lebih mahal dari mempertahankan yang sudah ada. Tapi mayoritas lapangan padel tidak punya sistem untuk mendeteksi tanda-tanda member mau pergi — sampai mereka benar-benar sudah tidak datang lagi.
+            <br><br>
+            Sistemnya sederhana di tahap awal: Courtside sebagai sumber data booking, dilengkapi catatan manual di spreadsheet untuk member yang tidak booking selama 14 hari. Staff yang ditugaskan melakukan personal outreach — bukan kirim promo massal, tapi pesan yang menyebut sesi terakhir mereka dan menawarkan slot konkrit.
+            <br><br>
+            Contoh pesan yang benar: <em>"Hei [Nama], udah lumayan lama nih. Sabtu ini ada slot jam 8 pagi, dan beberapa orang yang biasa main sama kamu juga ada. Mau aku reservein?"</em> Tiga elemen: personal, spesifik, ada daya tarik sosialnya.
+            <br><br>
+            Perlu dikonfirmasi ke Courtside: apakah platform bisa export riwayat booking per member dan apakah ada notifikasi otomatis untuk member yang tidak aktif. Kalau tidak, catatan manual tetap efektif di tahap awal.
+          </div>
+          <div class="init-impact">↑ Tingkat member yang bertahan 15–20% · ↓ Member yang pergi · ↑ Nilai jangka panjang setiap member</div>
+          <button class="detail-btn" onclick="openModal('churn')">
+            Lihat elaborasi detail
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="init-item">
+        <div class="init-num-col"><span>04</span></div>
+        <div class="init-body">
+          <span class="init-tag tag-community">Community Engine</span>
+          <div class="init-title">Americano League sebagai Acara Rutin Komunitas</div>
+          <div class="init-desc">
+            Format Americano — pasangan berganti setiap babak — adalah format yang secara sengaja memaksa semua peserta bermain bersama orang yang berbeda. Dalam satu sesi 2 jam, satu orang bisa main dengan 6–8 orang berbeda. Di akhir sesi, mereka punya kenalan baru yang terbentuk di RA — bukan di tempat lain.
+            <br><br>
+            Strukturnya: jadwal tetap mingguan (misal Rabu malam 19.00–21.00 atau Sabtu pagi 07.00–09.00), kapasitas 8–16 orang per sesi, dikenakan biaya — lebih murah dari booking biasa tapi tidak gratis. Orang yang bayar, hadir. Orang yang gratis, tidak bisa diandalkan.
+            <br><br>
+            Yang paling sering diabaikan: <strong>30 menit ngobrol setelah main adalah bagian terpenting dari sesi ini.</strong> Hubungan yang terbentuk sambil ngobrol setelah bermain jauh lebih kuat dari yang terbentuk di lapangan. RA harus memfasilitasi ini secara aktif — ada tempat duduk, ada minuman, suasana yang membuat orang betah.
+            <br><br>
+            Ini bukan event satu kali. Ini acara rutin yang tidak boleh dibatalkan sembarangan. Satu kali batal tanpa jadwal pengganti yang jelas bisa merusak kepercayaan yang dibangun berminggu-minggu.
+          </div>
+          <div class="init-impact">↑ Rasa memiliki terhadap RA · ↑ Jaringan pertemanan antar member · ↓ Kemungkinan member pindah ke tempat lain</div>
+          <button class="detail-btn" onclick="openModal('americano')">
+            Lihat elaborasi detail
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ ACTION PLAN ══ -->
+  <section class="section" id="action">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <div class="label" style="margin-bottom:16px">Action Plan</div>
+      <h2 class="section-title">30 hari pertama.<br><em>Langkah demi langkah.</em></h2>
+      <p class="section-body">
+        Masalah saat launching hampir selalu soal operasional, bukan strategi. Fase uji coba terbatas ada khusus untuk menemukan masalah tersebut sebelum jadi masalah di depan publik.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <div class="t-row">
+        <div class="t-left">
+          <div class="t-week">Days 1–7</div>
+          <div class="t-name">Fondasi & Sistem</div>
+        </div>
+        <div class="t-right">
+          <div class="t-tasks">
+            <div class="t-task">Courtside live dan sudah diuji — simulasikan alur booking dari sisi tamu, bukan hanya dari sisi admin</div>
+            <div class="t-task">Database member dibangun: nama, kontak, level main, frekuensi kunjungan, dari mana mereka tahu RA</div>
+            <div class="t-task">Semua SOP selesai dalam bentuk tertulis: prosedur penyambutan tamu, standar lapangan, penanganan keluhan (batas 24 jam), pesan setelah kunjungan</div>
+            <div class="t-task">Paket Founding Member siap: benefit, harga, syarat, dan bahan outreach — sebelum menghubungi siapapun</div>
+            <div class="t-task">Pelatihan staff sesi 1: sikap pelayanan, pengetahuan tentang padel, cara menangani keluhan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-left">
+          <div class="t-week">Days 8–14</div>
+          <div class="t-name">Uji Coba Terbatas</div>
+        </div>
+        <div class="t-right">
+          <div class="t-tasks">
+            <div class="t-task">Hubungi 30 kontak terdekat owner untuk Founding Member — secara personal, bukan pesan massal. Target: 20 yang masuk dalam 5 hari</div>
+            <div class="t-task">Sesi uji coba terkontrol maksimum 20 orang — tujuannya bukan pamer, tapi menemukan masalah operasional sebelum opening. Catat semua yang tidak berjalan lancar</div>
+            <div class="t-task">Semua masalah dari sesi uji coba diperbaiki sebelum grand opening</div>
+            <div class="t-task">Dokumentasi konten dari sesi uji coba — apa adanya, tidak perlu disetting. Ini yang diposting ke Instagram sebelum opening</div>
+            <div class="t-task">Pelatihan staff sesi 2 + penilaian kemampuan — tidak ada staff yang masuk ke operasional sebelum lulus</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-row highlight">
+        <div class="t-left">
+          <div class="t-week">Days 15–21</div>
+          <div class="t-name">Grand Opening</div>
+        </div>
+        <div class="t-right">
+          <div class="t-tasks">
+            <div class="t-task">Format komunitas — bukan seremoni. Sesi Americano terbuka, bukan potong pita. Founding member hadir sebagai tuan rumah, bukan tamu undangan</div>
+            <div class="t-task">Pendaftaran Founding Member resmi ditutup di hari opening — tidak ada pengecualian setelah ini</div>
+            <div class="t-task">Hubungi komunitas padel yang sudah ada di sekitar Cibubur lewat Reclub dan Courtside</div>
+            <div class="t-task">5 target perusahaan dihubungi dengan paket korporat — mulai dari perusahaan tempat founding member bekerja</div>
+            <div class="t-task">Dokumentasi lengkap — foto dan video yang bisa dipakai sebagai konten selama minimal 2 minggu ke depan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-row">
+        <div class="t-left">
+          <div class="t-week">Days 22–30</div>
+          <div class="t-name">Ukur & Perbaiki</div>
+        </div>
+        <div class="t-right">
+          <div class="t-tasks">
+            <div class="t-task">Review hasil vs target: tingkat pemakaian lapangan, jumlah booking, jumlah keluhan, tingkat keaktifan member</div>
+            <div class="t-task">Semua feedback dari tamu dikategorisasi — operasional, pelayanan, fasilitas. Masalah yang ditemukan langsung diperbaiki</div>
+            <div class="t-task">Identifikasi siapa dari sesi opening yang datang lebih dari sekali — mereka calon founding member yang belum masuk</div>
+            <div class="t-task">Jadwal Americano League pertama ditetapkan dengan tanggal dan waktu yang pasti — bukan "akan segera" tanpa kepastian</div>
+            <div class="t-task">Prioritas bulan 2 ditetapkan bersama owner RA berdasarkan data nyata, bukan asumsi awal</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ KPI ══ -->
+  <section class="section" id="kpi">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <div class="label" style="margin-bottom:16px">KPI yang Dikejar</div>
+      <h2 class="section-title">Yang diukur,<br><em>yang dikelola.</em></h2>
+      <p class="section-body">
+        Sebagian besar lapangan padel hanya pantau tingkat pemakaian dan pendapatan bulanan. Yang bertahan jangka panjang memantau apa yang mendorong angka-angka itu. Ini enam metrik yang perlu RA pantau dari hari pertama.
+      </p>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-box">
+        <div class="kpi-metric">Tingkat Member yang Bertahan</div>
+        <div class="kpi-val">≥ 80%</div>
+        <div class="kpi-why">Di bawah 75%, biaya mendapatkan member baru tidak pernah balik modal. Di bawah 70%, ada masalah di pengalaman — bukan di pemasaran.</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-metric">Tingkat Pemakaian Lapangan</div>
+        <div class="kpi-val">≥ 75%</div>
+        <div class="kpi-why">Rata-rata lapangan padel di Jakarta saat ini. Di bawah angka ini berarti ada slot yang terbuang setiap hari.</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-metric">Member yang Pergi per Tahun</div>
+        <div class="kpi-val">≤ 10%</div>
+        <div class="kpi-why">Standar club yang sehat secara global. Di atas angka ini, RA terus-menerus mengisi ember yang bocor.</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-metric">Net Promoter Score</div>
+        <div class="kpi-val">≥ 50</div>
+        <div class="kpi-why">Mengukur seberapa besar kemungkinan member merekomendasikan RA ke orang lain. Di atas 50 adalah zona sehat untuk bisnis berbasis komunitas.</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-metric">Nilai Member vs Biaya Mendapatkannya</div>
+        <div class="kpi-val">≥ 3×</div>
+        <div class="kpi-why">Setiap member harus menghasilkan minimal 3× dari biaya yang dikeluarkan untuk mendapatkan mereka. Di bawah ini, bisnis tidak akan bertahan.</div>
+      </div>
+      <div class="kpi-box">
+        <div class="kpi-metric">Tingkat Keaktifan Member</div>
+        <div class="kpi-val">≥ 70%</div>
+        <div class="kpi-why">Berapa persen member yang booking minimal sekali dalam 14 hari. Turun dua minggu berturut-turut berarti ada sesuatu yang salah.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SCOPE ESTETIO ══ -->
+  <section class="section" id="scope">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <div class="label" style="margin-bottom:16px">Scope Kerja Estetio</div>
+      <h2 class="section-title">Apa yang Estetio<br><em>kerjakan untuk RA</em></h2>
+    </div>
+
+    <div class="scope-grid">
+      <div class="scope-col">
+        <div class="scope-ws">Workstream 01</div>
+        <div class="scope-title">Strategi CX & Desain Sistem</div>
+        <div class="scope-items">
+          <div class="scope-item">Pemetaan perjalanan pelanggan end-to-end — 7 titik interaksi, lengkap dengan penanggung jawab di setiap titik</div>
+          <div class="scope-item">Penyusunan standar layanan dan SOP per tahap perjalanan pelanggan</div>
+          <div class="scope-item">Setup Courtside dan struktur database member</div>
+          <div class="scope-item">Sistem pencegahan member pergi: pencatatan, pemicu, dan cara menghubungi kembali</div>
+          <div class="scope-item">Cara mengukur kepuasan member dan jadwal pengukurannya</div>
+        </div>
+      </div>
+      <div class="scope-col">
+        <div class="scope-ws">Workstream 02</div>
+        <div class="scope-title">Operasional</div>
+        <div class="scope-items">
+          <div class="scope-item">SOP lengkap sebelum buka: penyambutan tamu, standar lapangan, penanganan keluhan, pesan setelah kunjungan</div>
+          <div class="scope-item">Desain dan pelaksanaan pelatihan staff — 2 sesi sebelum launching</div>
+          <div class="scope-item">Dashboard KPI dan jadwal review mingguan</div>
+          <div class="scope-item">Review operasional mingguan bersama owner selama 3 bulan pertama</div>
+          <div class="scope-item">Panduan audit kualitas — apa yang diperiksa, seberapa sering, oleh siapa</div>
+        </div>
+      </div>
+      <div class="scope-col">
+        <div class="scope-ws">Workstream 03</div>
+        <div class="scope-title">Komunitas & Retensi</div>
+        <div class="scope-items">
+          <div class="scope-item">Founding Member program: struktur, benefit, harga, cara outreach, dan pelaksanaan</div>
+          <div class="scope-item">Americano League: jadwal, format, kapasitas, harga, dan panduan per sesi</div>
+          <div class="scope-item">Paket korporat: tiga paket, satu halaman ringkasan, dan daftar 10 target perusahaan pertama</div>
+          <div class="scope-item">Panduan komunikasi ke member per tahap perjalanan mereka</div>
+          <div class="scope-item">Laporan bulanan: data aktual vs target</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mandate-box">
+      Estetio membangun sistem yang bisa dijalankan RA secara mandiri. Setiap hasil kerja terdokumentasi dan sepenuhnya milik RA. <strong>Sukses bagi kami adalah ketika RA tidak lagi membutuhkan kami — bukan sebaliknya.</strong> Itulah satu-satunya cara kerja sama yang worth it.
+    </div>
+  </section>
+
+  <!-- ══ CLOSING ══ -->
+  <section class="closing">
+    <div class="label" style="margin-bottom:24px">Estetio × RA Padel Court</div>
+    <h2 class="closing-h">Waktunya<br><em>sekarang.</em><br>Tidak selamanya.</h2>
+    <p class="closing-sub">
+      Indonesia adalah pasar padel terbesar dan tercepat tumbuh di Asia Tenggara. Cibubur punya banyak lapangan. Yang belum ada adalah club yang benar-benar layak dituju. Posisi itu bisa dimiliki RA — kalau sistemnya dibangun sebelum pasar terlalu penuh. Menunggu ada harganya.
+    </p>
+    <div class="closing-footer">
+      <div class="closing-meta">
+        <span class="cl">Agency</span>
+        <span class="cv">Estetio</span>
+      </div>
+      <div class="closing-meta">
+        <span class="cl">Klien</span>
+        <span class="cv">RA Padel Court, Cibubur</span>
+      </div>
+      <div class="closing-meta">
+        <span class="cl">Scope</span>
+        <span class="cv">CX · Ops · Retention</span>
+      </div>
+      <div class="estetio-mark">Estetio, 2025</div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- ══ MODAL OVERLAY ══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <div>
+        <div class="modal-tag" id="modalTag"></div>
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+// ── MODAL CONTENT ──
+const modalData = {
+
+  founding: {
+    tag: 'Revenue Architecture',
+    tagClass: 'tag-biz',
+    title: 'Founding Member Program — Elaborasi Detail',
+    body: `
+      <h4>Logika dasarnya</h4>
+      <p>Founding Member bukan loyalty program biasa. Ini adalah <strong>pre-launch monetization strategy yang sekaligus berfungsi sebagai social proof engine.</strong> Orang yang membayar untuk menjadi bagian dari sesuatu yang belum ada tidak hanya membeli akses — mereka membeli identitas. Dan orang yang sudah berinvestasi secara finansial dan emosional, adalah yang paling keras membelanya ke orang lain.</p>
+
+      <h4>Siapa sebenarnya Founding Member di konteks RA?</h4>
+      <p>Bukan 75 individu biasa. Setiap slot adalah <strong>host atau anchor player</strong> — satu orang yang membawa grupnya. Karena realita booking Jakarta: satu orang yang loyal ke RA akan membawa 3–5 orang ke setiap sesi. 75 founding member yang masing-masing punya grup berarti RA membangun loyalitas ke <strong>225–450 orang</strong> secara tidak langsung sejak hari pertama.</p>
+      <div class="modal-callout">Churn seorang founding member di model ini jauh lebih mahal secara sosial. Kalau dia pindah court, dia harus convince seluruh grupnya untuk ikut. Itu barrier yang sangat tinggi.</div>
+
+      <h4>Struktur benefit yang direkomendasikan</h4>
+      <table class="modal-table">
+        <thead><tr><th>Benefit</th><th>Logika di Baliknya</th></tr></thead>
+        <tbody>
+          <tr><td>Priority booking 48 jam lebih awal</td><td>Membantu mereka secure slot untuk seluruh grup — nilai nyata yang dirasakan setiap minggu</td></tr>
+          <tr><td>1 court reserved per minggu</td><td>Satu sesi tetap yang tidak perlu diperebutkan — 4 orang langsung terpakai</td></tr>
+          <tr><td>Kartu fisik bernomor (001–075)</td><td>Detail kecil yang dampaknya besar secara psikologis — orang akan foto dan posting ini</td></tr>
+          <tr><td>Undangan event eksklusif</td><td>Benefit yang tidak bisa dibeli — hanya dimiliki founding member</td></tr>
+          <tr><td>Nama di Founding Wall RA</td><td>Identitas permanen yang mengikat mereka ke venue secara emosional</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Langkah eksekusi</h4>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Hitung struktur finansial dulu</div>
+            <div class="step-desc">Revenue dari 75 member harus cover minimal 60–70% biaya operasional bulan pertama. Harga bukan diskon — sama atau sedikit di bawah normal, tapi benefit jauh lebih besar.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Siapkan Founding Member Kit</div>
+            <div class="step-desc">Satu halaman: benefit spesifik, harga, cara daftar, deadline nyata. Bukan brosur. Tidak ada fluff. Kartu fisik dipesan sekarang — lead time cetak 7–10 hari.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Identifikasi 30 kontak pertama secara selektif</div>
+            <div class="step-desc">Bukan siapa yang paling mungkin bayar — tapi siapa yang paling mungkin membawa 3 orang lain setelah join. Prioritaskan koordinator komunitas perumahan dan orang dengan network luas di Cibubur.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Outreach personal, bukan blast</div>
+            <div class="step-desc"><em>"[Nama], RA buka bulan depan. Sebelum ke publik, kami kasih akses ke 75 orang pertama yang kami percaya. Tertarik?"</em> — Pendek. Tidak ada penjelasan panjang di pesan pertama.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Second wave via referral</div>
+            <div class="step-desc">Founding member yang sudah masuk diminta refer satu orang yang mereka percaya. Framing: "Kami mau pastikan orang-orang di sini adalah orang yang kamu nyaman main bareng."</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="step-title">Hard close tanpa pengecualian</div>
+            <div class="step-desc">Ketika 75 slot penuh atau deadline tercapai — tutup. Tidak ada pengecualian. Integritas deadline adalah fondasi kepercayaan awal RA.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">7</div>
+          <div class="step-content">
+            <div class="step-title">Welcome session khusus founding member</div>
+            <div class="step-desc">Sesi Americano 2 jam + makan malam sebelum grand opening. Tujuannya: mereka saling kenal. Saat opening tiba, mereka hadir sebagai tuan rumah — bukan tamu.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-impact">Target konversi: 20 dari 30 kontak pertama dalam 5 hari. Di bawah angka ini, ada masalah di proposisi atau targeting — evaluasi sebelum lanjut ke second wave.</div>
+    `
+  },
+
+  corporate: {
+    tag: 'B2B Revenue',
+    tagClass: 'tag-biz',
+    title: 'Corporate Padel — Elaborasi Detail',
+    body: `
+      <h4>Kenapa ini relevan untuk Cibubur</h4>
+      <p>Padel di pasar matang (UK, US) sudah menjadi medium networking korporat — menggantikan golf. Keunggulan strukturalnya: <strong>lebih cepat</strong> (1–2 jam vs setengah hari), <strong>lebih inklusif</strong> (tidak butuh skill tinggi), <strong>lebih sosial</strong> (format doubles memaksa interaksi), dan <strong>lebih terjangkau</strong> secara operasional. Cibubur berbatasan dengan cluster bisnis yang signifikan — properti, otomotif, distribusi, FMCG.</p>
+
+      <h4>Tiga segmen target B2B</h4>
+      <table class="modal-table">
+        <thead><tr><th>Segmen</th><th>Pendekatan</th><th>Potensi</th></tr></thead>
+        <tbody>
+          <tr><td>Perusahaan di sekitar Cibubur</td><td>Direct outreach ke HR/GA Manager yang pegang budget team building</td><td>3–4 sesi/tahun, 20–40 orang/sesi</td></tr>
+          <tr><td>Eksekutif yang sudah jadi founding member</td><td>Tanyakan saat onboarding: "apakah perusahaan punya budget kegiatan olahraga bersama?"</td><td>Warm lead, konversi tertinggi</td></tr>
+          <tr><td>Client entertainment</td><td>Package khusus untuk eksekutif yang ajak klien atau partner bisnis</td><td>Recurring, weekday flexible</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Tiga paket yang dijual</h4>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="step-num">A</div>
+          <div class="step-content">
+            <div class="step-title">Corporate Outing Session</div>
+            <div class="step-desc">3 jam, 2–3 court sekaligus, format Americano (semua bisa langsung main). Includes: coach pendampingan, F&B paket, dokumentasi foto/video. Cocok 8–24 orang. Dijual all-in per orang — lebih mudah di-approve di budget korporat daripada per court.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">B</div>
+          <div class="step-content">
+            <div class="step-title">Corporate League Membership</div>
+            <div class="step-desc">Satu slot court tetap per minggu, 3 bulan. Jersey tim branded, scoring system, mini-trophy di akhir kuartal. Cocok untuk perusahaan yang mau bangun kultur olahraga internal secara rutin.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">C</div>
+          <div class="step-content">
+            <div class="step-title">Client Entertainment Package</div>
+            <div class="step-desc">Court eksklusif 2–4 orang, welcome drink, towel service, post-match light meal. Untuk eksekutif yang ajak klien dalam setting personal. Weekday flexible.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-callout"><strong>Kenapa ini secara operasional menarik:</strong> Corporate segment mengisi weekday occupancy yang selalu rendah. Team building biasanya weekday siang atau sore — justru saat court paling kosong. Artinya corporate B2B tidak bersaing dengan slot premium weekend.</div>
+
+      <h4>Langkah eksekusi</h4>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Buat satu pager corporate package sebelum grand opening</div>
+            <div class="step-desc">PDF yang bisa dikirim via WhatsApp atau email. Tiga paket, harga, cara booking. Tidak perlu website khusus di tahap awal.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Identifikasi 10 target dari network founding member</div>
+            <div class="step-desc">Mulai dari warm leads — perusahaan tempat founding member bekerja. Satu intro yang warm konversinya jauh lebih tinggi dari 100 cold call.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Sesi trial corporate dengan harga khusus</div>
+            <div class="step-desc">Bukan gratis — tapi discounted untuk sesi pertama dengan syarat kasih feedback tertulis. Ini juga menghasilkan testimonial untuk menjual ke account berikutnya.</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Satu point of contact untuk semua inquiry korporat</div>
+            <div class="step-desc">Bisa owner sendiri di awal. Tapi harus ada satu nomor, satu orang, satu response time yang jelas. Corporate client tidak mau di-bounce ke sana-sini.</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-impact">Review setiap kuartal: berapa sesi terjual, berapa yang repeat, berapa yang convert ke corporate league. Hapus paket yang tidak laku.</div>
+    `
+  },
+
+  churn: {
+    tag: 'Data-Driven Ops',
+    tagClass: 'tag-data',
+    title: 'Sistem Pencegahan Churn — Elaborasi Detail',
+    body: `
+      <h4>Kenapa ini kritis secara finansial</h4>
+      <p>Biaya mendapatkan satu member baru rata-rata <strong>5–7× lebih mahal</strong> dari mempertahankan yang sudah ada. Setiap member yang churn tidak hanya membuat RA kehilangan revenue mereka — RA harus spend 5–7× lebih banyak untuk menggantinya. Di tahap awal, ini bisa menjadi bleeding yang tidak terlihat tapi sangat nyata.</p>
+
+      <h4>Bagaimana churn sebenarnya terjadi</h4>
+      <p>Orang tidak tiba-tiba berhenti. Ada pola yang konsisten:</p>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Frekuensi main mulai turun</div>
+            <div class="step-desc">Dari mingguan ke dua mingguan — sering tidak disadari oleh venue</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Booking makin mepet ke hari H</div>
+            <div class="step-desc">Tidak lagi booking jauh-jauh hari — sinyal engagement mulai menurun</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Tidak hadir di event komunitas</div>
+            <div class="step-desc">Mulai menghindar dari interaksi sosial di venue</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Tidak merespons komunikasi</div>
+            <div class="step-desc">Sudah hampir pergi — intervensi di titik ini kemungkinan berhasil sangat kecil</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-callout"><strong>Window untuk intervensi adalah antara poin 1 dan 3.</strong> Kalau sudah di poin 4, biasanya sudah terlambat. Sistem ini dirancang untuk menangkap sinyal di poin 1–2.</div>
+
+      <h4>Sistemnya — MVP Stage (pakai Courtside + tracking manual)</h4>
+      <p>Tidak harus mahal. Setiap minggu, satu orang staff review siapa yang tidak booking dalam 14 hari. Mereka yang masuk list ini mendapat personal outreach.</p>
+      <p><strong>Contoh pesan yang benar:</strong></p>
+      <div class="modal-callout"><em>"Hei [Nama], udah lumayan lama nih kita nggak ketemu di court. Sabtu ini ada slot bagus jam 8 pagi, kebetulan beberapa orang yang biasa main sama kamu juga ada. Mau aku reservein?"</em>
+      <br><br>
+      Tiga elemen kritis: <strong>personal</strong> (menyebut nama dan keabsenan mereka), <strong>spesifik</strong> (ada slot konkrit, bukan "kapan-kapan"), <strong>social pull</strong> (menyebut orang lain yang mereka kenal akan ada).</div>
+
+      <h4>Satu metrik yang harus ditrack setiap minggu</h4>
+      <p><strong>Member Activity Rate:</strong> berapa persen dari total member aktif yang booking minimal sekali dalam 14 hari terakhir. Kalau angka ini turun dua minggu berturut-turut — ada sesuatu yang salah, entah di pengalaman, jadwal, atau komunikasi.</p>
+
+      <h4>Catatan soal Courtside</h4>
+      <p>Perlu dikonfirmasi ke Courtside: apakah platform bisa export booking history per member dan apakah ada notifikasi otomatis untuk member inaktif. Kalau tidak tersedia, tracking manual di spreadsheet sederhana tetap efektif di tahap awal — yang penting ada yang aktif membacanya dan mengambil tindakan setiap minggu.</p>
+      <div class="modal-impact">Target: Member Activity Rate ≥ 70% setiap minggu. Di bawah ini, sistem re-engagement diaktifkan secara keseluruhan — bukan hanya untuk individu.</div>
+    `
+  },
+
+  americano: {
+    tag: 'Community Engine',
+    tagClass: 'tag-community',
+    title: 'Americano League — Elaborasi Detail',
+    body: `
+      <h4>Kenapa format Americano dan bukan yang lain</h4>
+      <p>Di format booking biasa, empat orang datang, main bareng, pulang. Mereka tidak perlu berinteraksi dengan siapapun di luar grup mereka. Kalau grupnya solid, mereka bisa main di court manapun — tidak ada bedanya.</p>
+      <p>Di Americano, partner berganti setiap babak. Dalam satu sesi 2 jam, satu orang bisa bermain dengan 6–8 orang berbeda. <strong>Pada akhir sesi, mereka punya koneksi sosial baru yang terbentuk di dalam venue RA.</strong> Koneksi itu tidak bisa dibawa ke court lain.</p>
+      <div class="modal-callout">Ini yang membuat Americano menjadi retention tool, bukan sekadar event: RA menjadi lokasi di mana network padel seseorang tinggal.</div>
+
+      <h4>Struktur sesi yang direkomendasikan</h4>
+      <table class="modal-table">
+        <thead><tr><th>Elemen</th><th>Rekomendasi</th><th>Alasan</th></tr></thead>
+        <tbody>
+          <tr><td>Frekuensi</td><td>Mingguan — jadwal tetap</td><td>Bulanan tidak membangun kebiasaan. Mingguan membangun ritual.</td></tr>
+          <tr><td>Waktu</td><td>Satu slot fixed — misal Rabu 19.00 atau Sabtu 07.00</td><td>Konsistensi memungkinkan orang memasukkannya ke kalender sebagai recurring event</td></tr>
+          <tr><td>Kapasitas</td><td>8–16 orang (2–4 court)</td><td>Cukup besar untuk dinamika sosial yang menarik, cukup kecil untuk tetap personal</td></tr>
+          <tr><td>Biaya</td><td>Dikenakan biaya — lebih murah dari booking reguler</td><td>Orang yang bayar, hadir. Orang yang gratis, tidak reliable.</td></tr>
+          <tr><td>Durasi sesi</td><td>80–90 menit main + 20–30 menit post-match</td><td>Post-match adalah bagian terpenting — jangan dipotong</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Post-match adalah bagian yang paling sering diabaikan</h4>
+      <p>Relasi yang terbentuk sambil ngobrol setelah main jauh lebih kuat dari yang terbentuk di court. RA harus memfasilitasi ini secara aktif:</p>
+      <div class="modal-steps">
+        <div class="modal-step">
+          <div class="step-num">→</div>
+          <div class="step-content">
+            <div class="step-title">Ada tempat duduk yang cukup dan nyaman</div>
+            <div class="step-desc">Orang tidak akan berlama-lama jika tidak ada tempat yang mengundang untuk duduk dan ngobrol</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">→</div>
+          <div class="step-content">
+            <div class="step-title">F&B tersedia dan dipromosikan aktif setelah sesi</div>
+            <div class="step-desc">Staff menawarkan — bukan menunggu ditanya</div>
+          </div>
+        </div>
+        <div class="modal-step">
+          <div class="step-num">→</div>
+          <div class="step-content">
+            <div class="step-title">Ambience yang membuat orang betah</div>
+            <div class="step-desc">Musik, pencahayaan, suhu ruangan — semua diset untuk mendorong orang tinggal, bukan pergi</div>
+          </div>
+        </div>
+      </div>
+
+      <h4>Kenapa orang tidak bisa "pindah" setelah bergabung</h4>
+      <p>Bayangkan skenario ini: seorang member ikut Americano League setiap Rabu malam selama dua bulan. Dalam dua bulan itu dia sudah main dengan 30–40 orang berbeda di RA. Beberapa jadi teman main regulernya.</p>
+      <p>Sekarang ada court baru buka lebih dekat dari rumahnya, harga lebih murah. Apakah dia akan pindah?</p>
+      <p>Jawabannya bukan soal harga. Kalau dia pindah, dia harus mulai dari nol. Teman-teman mainnya ada di RA. Americano League-nya ada di RA. <strong>Network padel-nya ada di RA.</strong></p>
+
+      <div class="modal-callout"><strong>Satu aturan yang tidak boleh dilanggar:</strong> Jadwal tidak boleh cancel tanpa reschedule yang pasti dan komunikasi yang jelas. Satu kali cancel tanpa kejelasan bisa merusak trust yang dibangun berminggu-minggu. Ini bukan event — ini institusi sosial.</div>
+      <div class="modal-impact">Goal bukan menjalankan turnamen. Goal-nya adalah membuat RA menjadi tempat di mana seseorang punya social network padel-nya — sehingga meninggalkan RA bukan keputusan finansial, tapi keputusan sosial.</div>
+    `
+  }
+};
+
+// ── MODAL FUNCTIONS ──
+function openModal(key) {
+  const data = modalData[key];
+  if (!data) return;
+
+  const overlay = document.getElementById('modalOverlay');
+  const tagEl = document.getElementById('modalTag');
+  const titleEl = document.getElementById('modalTitle');
+  const bodyEl = document.getElementById('modalBody');
+
+  // Set tag
+  tagEl.textContent = data.tag;
+  tagEl.className = 'modal-tag ' + data.tagClass;
+  titleEl.textContent = data.title;
+  bodyEl.innerHTML = data.body;
+
+  // Reset scroll
+  document.getElementById('modalBox').scrollTop = 0;
+
+  // Open
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+// Close on Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+// ── SIDE NAV ──
+const sections = ['hero','latar','kompetitor','strategi','cx','inisiatif','action','kpi','scope'];
+const dots = document.querySelectorAll('.side-dot');
+
+function updateNav() {
+  const scrollY = window.scrollY + window.innerHeight / 3;
+  let active = 0;
+  sections.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= scrollY) active = i;
+  });
+  dots.forEach((d, i) => d.classList.toggle('active', i === active));
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    const el = document.getElementById(sections[i]);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+</script>
+</body>
+</html>
